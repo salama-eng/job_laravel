@@ -1,6 +1,6 @@
 
-<?php echo View::make('include/header'); ?>
-
+@extends('layout.master')
+@section('content')
 
 
 <!--html-->
@@ -235,4 +235,4 @@
     <!------------    END main ------------------------->
   
 
-<?php echo View::make('include/footer'); ?>
+    @endsection

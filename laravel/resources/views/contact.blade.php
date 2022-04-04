@@ -1,4 +1,8 @@
-<?php echo View::make('include/header'); ?>
+
+@extends('layout.master')
+@section('content')
+
+
 
             <!---         start      -->
 
@@ -49,4 +53,6 @@
       
 
             <!-----------------START FOOTER --->
-            <?php echo View::make('include/footer'); ?>
+
+            @endsection
+            

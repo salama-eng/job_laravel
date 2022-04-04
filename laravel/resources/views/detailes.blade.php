@@ -1,4 +1,8 @@
-<?php echo View::make('include/header'); ?>
+
+@extends('layout.master')
+@section('content')
+
+
             <!---         start      -->
 
             <div class="details justify-content-center p-4 ">
@@ -96,4 +100,5 @@
 
 
 
-                <?php echo View::make('include/footer'); ?>
+                @endsection
+                

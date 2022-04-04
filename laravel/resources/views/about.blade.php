@@ -1,4 +1,8 @@
-<?php echo View::make('include/header'); ?>
+
+@extends('layout.master')
+@section('content')
+
+
 
             <!---         start      -->
 <div class="about-container d-flex flex-wrap m-auto">
@@ -44,4 +48,5 @@
 
     <!-----------------START FOOTER --->
 
-    <?php echo View::make('include/footer'); ?>
+    @endsection
+    

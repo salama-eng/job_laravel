@@ -1,4 +1,7 @@
-<?php echo View::make('include/header'); ?>
+
+@extends('layout.master')
+@section('content')
+
 
             <!---         start      -->
             <div class="members-container col-lg-8 col-md-10 col-sm-8 m-auto ">
@@ -91,4 +94,6 @@
                 <!-----------------START FOOTER --->
 
 
-                <?php echo View::make('include/footer'); ?>
+
+                @endsection
+                
