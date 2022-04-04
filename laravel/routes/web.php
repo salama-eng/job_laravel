@@ -51,6 +51,10 @@ Route::get('/master', function () {
 });
 
 
+Route::get('/adminmaster', function () {
+    return view('admin.layout.master');
+});
+
 
 
 
