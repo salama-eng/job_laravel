@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\jobsController;
+use App\Http\Controllers\pageContent\aboutController;
+use App\Http\Controllers\pageContent\membersController;
+use App\Http\Controllers\pageContent\servicesController;
+use App\Http\Controllers\pageContent\sliderController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -54,6 +59,14 @@ Route::get('/master', function () {
 Route::get('/adminmaster', function () {
     return view('admin.layout.master');
 });
+
+
+Route::get('/listjobs',[jobsController::class,'listAll'])->name("listjobs");
+Route::get('/admin_about',[aboutController::class,'listAll'])->name("admin_about");
+Route::get('/admin_member',[membersController::class,'listAll'])->name("admin_member");
+Route::get('/admin_services',[servicesController::class,'listAll'])->name("admin_services");
+Route::get('/sliders',[sliderController::class,'listAll'])->name("sliders");
+
 
 
 
