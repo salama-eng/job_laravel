@@ -3,29 +3,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- =========================================================
 * Sneat - Bootstrap 5 HTML Admin Template - Pro | v1.0.0
 ==============================================================
@@ -221,7 +198,7 @@
           </a>
         </li>
         <li class="menu-item">
-          <a href="{{ url('members') }}" class="menu-link">
+          <a href="{{ url('addmember') }}" class="menu-link">
             <div data-i18n="Add member">Add member</div>
           </a>
         </li>

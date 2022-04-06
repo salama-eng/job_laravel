@@ -18,6 +18,7 @@ return new class extends Migration
             $table->boolean(column:"is_active");
             $table->string(column:"name");
             $table->string(column:"image");
+            $table->string(column:"email");
             $table->timestamps();
         });
     }

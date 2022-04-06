@@ -61,11 +61,24 @@ Route::get('/adminmaster', function () {
 });
 
 
+Route::get('/addJob',[jobsController::class,'addJob'])->name("addJob");
 Route::get('/listjobs',[jobsController::class,'listAll'])->name("listjobs");
+Route::post('/storjob',[jobsController::class,'storjob'])->name("storjob");
+
+
+
+
 Route::get('/admin_about',[aboutController::class,'listAll'])->name("admin_about");
+
 Route::get('/admin_member',[membersController::class,'listAll'])->name("admin_member");
+Route::get('/addmember',[membersController::class,'addmember'])->name("addmember");
+Route::post('/stormember',[membersController::class,'stormember'])->name("stormember");
+
+
+
 Route::get('/admin_services',[servicesController::class,'listAll'])->name("admin_services");
 Route::get('/sliders',[sliderController::class,'listAll'])->name("sliders");
+
 
 
 
