@@ -10,6 +10,10 @@ class jobsController extends Controller
 {
    
     public function listAll(){
+        $company=companies::all();
+        $job=jobs::all();
+        $all=array($company,$job);
+        return response($company);
         return view('admin.jobs.ListJob');
     }
 
@@ -35,9 +39,9 @@ class jobsController extends Controller
       $job->type=$request->type;
       $job->is_active=$request->is_active;
         if($job->save())
-        return redirect()->route('home')
+        return redirect()->route('listjobs')
         ->with(['success'=>'user created successful']);
-        return back()->with(['error'=>'can not create user']);
+        return back()->with(['error'=>'can not create job']);
  
   }
 
