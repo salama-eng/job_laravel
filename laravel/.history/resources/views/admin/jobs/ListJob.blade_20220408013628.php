@@ -60,7 +60,7 @@
 <th>{{$jobs->time_start}}</th>
 <th>{{$jobs->time_close}}</th>
 <th>{{$jobs->steps_to_applye}}</th>
-<th>{{$jobs->respossbilities}}</th>
+<th>{{$jobs->responssiblities}}</th>
 <th>{{$jobs->qualifications}}</th>
 <th>{{$jobs->shift}} </th>
 <th>{{$jobs->is_active}}</th>

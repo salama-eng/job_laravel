@@ -39,7 +39,7 @@
         <th>{{$comp->id}}</th>
         <th>{{$comp->name}}</th>
         <th>{{$comp->email}}</th>
-        <th><img src="image/{{$comp->image}}" alt="{{$comp->image}}" width="60" ></th>
+        <th><img src="image/{{$comp->image}}" alt="{{$comp->image}}" width="60" height="60"></th>
 
         <th>{{$comp->is_active}}</th>
        </tr>   @endforeach</tbody>

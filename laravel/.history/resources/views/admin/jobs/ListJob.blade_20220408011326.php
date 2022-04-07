@@ -26,23 +26,52 @@
        
 <tr>
   <th>id</th>
+  <th>Job title</th>
+  <th>description</th>
+  <th>company logo</th>
   <th>company name</th>
-  <th>company email</th>
-  <th>logo</th>
+  <th>type</th>
+  <th>country</th>
+  <th>publish time</th>
+  <th>close time</th>
+  <th>steps to apply</th>
+  <th>responsiblities</th>
+  <th>qualificatons</th>
+  <th>shift </th>
   <th>is active</th>
 </tr>
       </thead>
       <tbody class="table-border-bottom-0">
-        @foreach ($company as $comp)
-          
-    <tr>
-        <th>{{$comp->id}}</th>
-        <th>{{$comp->name}}</th>
-        <th>{{$comp->email}}</th>
-        <th><img src="image/{{$comp->image}}" alt="{{$comp->image}}" width="60" ></th>
+@if (isset($job))
+    
 
-        <th>{{$comp->is_active}}</th>
-       </tr>   @endforeach</tbody>
+  
+
+@foreach ($job as $jobs)
+
+
+<td>id</td>
+<th>{{$jobs->jobtitle}}</th>
+
+<th>{{$comp=companies::where('id', $job->id)}}
+
+$comp->image</th> 
+<th>company name</th>
+<th>type</th>
+<th>country</th>
+<th>publish time</th>
+<th>close time</th>
+<th>steps to apply</th>
+<th>responsiblities</th>
+<th>qualificatons</th>
+<th>shift </th>
+<th>is active</th>
+
+  
+@endforeach
+@endif
+
+      </tbody>
     </table>
   </div>
 </div>

@@ -35,14 +35,14 @@
       <tbody class="table-border-bottom-0">
         @foreach ($company as $comp)
           
-    <tr>
+        @endforeach
         <th>{{$comp->id}}</th>
         <th>{{$comp->name}}</th>
         <th>{{$comp->email}}</th>
-        <th><img src="image/{{$comp->image}}" alt="{{$comp->image}}" width="60" ></th>
+        <th><img src="{{$comp->email}}" alt="{{$comp->email}}"></th>
 
         <th>{{$comp->is_active}}</th>
-       </tr>   @endforeach</tbody>
+      </tbody>
     </table>
   </div>
 </div>

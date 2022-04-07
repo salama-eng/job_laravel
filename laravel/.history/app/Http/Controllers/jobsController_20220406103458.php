@@ -12,8 +12,9 @@ class jobsController extends Controller
     public function listAll(){
         $company=companies::all();
         $job=jobs::all();
-
-        return view('admin.jobs.ListJob',compact('company', 'job'));
+        $all=array($company,$job);
+        return response($company);
+        return view('admin.jobs.ListJob');
     }
 
     public function addJob(){

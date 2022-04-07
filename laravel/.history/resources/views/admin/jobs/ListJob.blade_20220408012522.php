@@ -52,18 +52,21 @@
 
 <td>id</td>
 <th>{{$jobs->jobtitle}}</th>
-<th>{{$jobs->description}}</th>
-<th>company logo</th>
+
+<th>{{$users = App\Models\companies::where('id',$jobs->id)->get();
+
+$users->image}}</th> 
 <th>company name</th>
-<th>{{$jobs->type}}</th>
-<th>{{$jobs->country}}</th>
-<th>{{$jobs->time_start}}</th>
-<th>{{$jobs->time_close}}</th>
-<th>{{$jobs->steps_to_applye}}</th>
-<th>{{$jobs->respossbilities}}</th>
-<th>{{$jobs->qualifications}}</th>
-<th>{{$jobs->shift}} </th>
-<th>{{$jobs->is_active}}</th>
+<th>type</th>
+<th>country</th>
+<th>publish time</th>
+<th>close time</th>
+<th>steps to apply</th>
+<th>responsiblities</th>
+<th>qualificatons</th>
+<th>shift </th>
+<th>is active</th>
+
   
 @endforeach
 @endif

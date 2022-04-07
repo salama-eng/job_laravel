@@ -9,8 +9,7 @@ use Illuminate\Http\Request;
 class membersController extends Controller
 {
     public function listAll(){
-        $company=companies::all();
-        return view('admin.pageContent.members')->with('company', $company);
+        return view('admin.pageContent.members');
     }
     public function addmember(){
         return view('admin.pageContent.addmember');
