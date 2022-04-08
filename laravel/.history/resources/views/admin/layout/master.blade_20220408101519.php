@@ -238,7 +238,7 @@
           </a>
         </li>
         <li class="menu-item">
-          <a href="{{ url('addslider') }}" class="menu-link">
+          <a href="{{ url('slider') }}" class="menu-link">
             <div data-i18n="Add slider">Add slider</div>
           </a>
         </li>

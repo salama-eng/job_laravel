@@ -78,14 +78,10 @@ Route::post('/stormember',[membersController::class,'stormember'])->name("storme
 
 Route::get('/admin_services',[servicesController::class,'listAll'])->name("admin_services");
 Route::get('/addservice',[servicesController::class,'addservice'])->name("addservice");
-Route::post('/storservice',[servicesController::class,'storservice'])->name("storservice");
-
 
 
 
 Route::get('/sliders',[sliderController::class,'listAll'])->name("sliders");
-Route::get('/addslider',[sliderController::class,'addslider'])->name("addslider");
-Route::post('/storslider',[sliderController::class,'storslider'])->name("storslider");
 
 
 

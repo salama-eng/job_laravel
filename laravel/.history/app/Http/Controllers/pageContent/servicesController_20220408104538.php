@@ -35,7 +35,7 @@ class servicesController extends Controller
         $service->description=$request->description;
         $service->services_title=$request->services_title;
         if($service->save())
-        return redirect()->route('admin_services')
+        return redirect()->route('services')
         ->with(['success'=>'user created successful']);
         return back()->with(['error'=>'can not create user']);
 

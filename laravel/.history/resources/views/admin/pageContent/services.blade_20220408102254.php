@@ -42,9 +42,9 @@
        
         <tr>
           <th>{{$service->id}}</th>
-          <th>{{$service->services_title}}</th>
+          <th>{{$service->title}}</th>
           <th>{{$service->description}}</th>
-          <th><img src="image/{{$service->image}}" alt="{{$service->image}}" width="50" ></th>
+          <th><img src="image/{{$service->image}}" alt="{{$service->image}}"></th>
           <th>{{$service->is_active}}</th>
         </tr>
 

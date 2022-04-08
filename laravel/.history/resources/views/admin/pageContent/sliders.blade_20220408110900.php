@@ -19,7 +19,7 @@
 
 <!-- Basic Bootstrap Table -->
 <div class="card">
-  <h5 class="card-header">Books Table</h5>
+  <h5 class="card-header">slider Table</h5>
   <div class="table-responsive text-nowrap">
     <table class="table">
       <thead>
@@ -35,20 +35,17 @@
       <tbody class="table-border-bottom-0">
 
 
-
-@foreach ($services as $service)
-  
-
+     @foreach ($slider as $slid)
        
+   
         <tr>
-          <th>{{$service->id}}</th>
-          <th>{{$service->services_title}}</th>
-          <th>{{$service->description}}</th>
-          <th><img src="image/{{$service->image}}" alt="{{$service->image}}" width="50" ></th>
-          <th>{{$service->is_active}}</th>
+          <th>{{$slid->id}}</th>
+          <th>{{$slid->slider_title}}</th>
+          <th>{{$slid->description}}</th>
+          <th><img src="image/{{$slid->image}}" alt="{{$slid->slider_image}}" width="70"></th>
+          <th>{{$slid->is_active}}</th>
         </tr>
-
-@endforeach
+        @endforeach
       </tbody>
     </table>
   </div>
@@ -74,4 +71,4 @@
 
 
 
-@endsection 
+@endsection

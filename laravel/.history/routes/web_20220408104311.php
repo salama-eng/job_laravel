@@ -82,10 +82,7 @@ Route::post('/storservice',[servicesController::class,'storservice'])->name("sto
 
 
 
-
 Route::get('/sliders',[sliderController::class,'listAll'])->name("sliders");
-Route::get('/addslider',[sliderController::class,'addslider'])->name("addslider");
-Route::post('/storslider',[sliderController::class,'storslider'])->name("storslider");
 
 
 

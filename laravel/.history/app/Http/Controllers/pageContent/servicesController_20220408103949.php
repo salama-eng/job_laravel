@@ -27,18 +27,13 @@ class servicesController extends Controller
             $file= $request->file('image');
             $filename= date('YmdHi').$file->getClientOriginalName();
             $file-> move(public_path('Image'), $filename);
-            $service['image']= $filename;
+            $data['image']= $filename;
         }
-      else
-      $service->image = 'defualt.png';
+      
         $service->is_active=$request->is_active;
         $service->description=$request->description;
-        $service->services_title=$request->services_title;
-        if($service->save())
-        return redirect()->route('admin_services')
-        ->with(['success'=>'user created successful']);
-        return back()->with(['error'=>'can not create user']);
-
+        
+    
 
     }
 }
