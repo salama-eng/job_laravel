@@ -19,30 +19,43 @@ class AuthController extends Controller
 
     public function showLogin(){
         return view('admin.login');
-        if(Auth::check())
-        return redirect()->route($this->checkRole());
-        else 
-        return view('admin.login');
     }
 
     public function login(Request $request){
-    //   return request();
+        Validator::validate($request->all(),[
+            'email_username'=>['email','required','min:3','max:10','unique:users'],
+            'user_pass'=>['required','min:5']
+      // return request();
        // if(Auth::attempt(['email'=>$request->email_username,'password'=>$request->user_pass,'is_active'=>1])){
             if(Auth::attempt(['email'=>$request->email,'password'=>$request->pass])){
 
-            
-          //  if(Auth::user()->hasRole('admin'))
-            return redirect()->route('listjobs');
-            // else 
-            // return redirect()->route('index');
 
+        ],[
+            'email_username.required'=>'this field is required',
+            'email_username.min'=>'can not be less than 3 letters', 
+            'email_username.unique'=>'there is an email in the table',
+        ]);
+
+
+if(Auth::attempt(['email'=>'email_username','password'=>'user_pass']));
+
+
+
+      /*  echo $request->input('email_username');
+        echo "<br>";
+        echo $request->has('user_pass');*/
+
+        /*print_r($request->input());
+        echo "<br>";
+        echo $request->has('user_pass');
+        echo"<br>";
+        if(!$request->filled('user_pass')) echo "empty data";
+        //$request->file('profile_image');
+      $request->hasFile('profile_image');
         
-        }
-        else {
-            return redirect()->route('login')->with(['message'=>'incorerct username or password ']);
-        }
-
-
+        //echo $request->email_username;
+        //print_r($request->input());
+        */
 
     }
 
@@ -53,7 +66,7 @@ class AuthController extends Controller
     public function register(Request $request){
 
         Validator::validate($request->all(),[
-            'full_name'=>['required','min:3','max:30'],
+            'full_name'=>['required','min:3','max:10'],
             'u_email'=>['required','email','unique:users,email'],
             'user_pass'=>['required','min:5'],
             'confirm_pass'=>['same:user_pass']
@@ -77,7 +90,7 @@ class AuthController extends Controller
         $u->password=Hash::make($request->user_pass);
         $u->email=$request->u_email;
         if($u->save())
-        return redirect()->route('/')
+        return redirect()->route('home')
         ->with(['success'=>'user created successful']);
         return back()->with(['error'=>'can not create user']);
 
@@ -87,20 +100,6 @@ class AuthController extends Controller
     }
     public function logout(){
 
-        Auth::logout();
-        return redirect()->route('login');
-
     }
-
-    public function checkRole(){
-        if(Auth::user()->hasRole('admin'))
-        return 'listjobs';
-            else 
-            return '/';
-        
-    }
-
-
-
 
 }

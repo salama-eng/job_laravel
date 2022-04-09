@@ -26,7 +26,7 @@ class AuthController extends Controller
     }
 
     public function login(Request $request){
-    //   return request();
+      // return request();
        // if(Auth::attempt(['email'=>$request->email_username,'password'=>$request->user_pass,'is_active'=>1])){
             if(Auth::attempt(['email'=>$request->email,'password'=>$request->pass])){
 
@@ -43,6 +43,21 @@ class AuthController extends Controller
         }
 
 
+      /*  echo $request->input('email_username');
+        echo "<br>";
+        echo $request->has('user_pass');*/
+
+        /*print_r($request->input());
+        echo "<br>";
+        echo $request->has('user_pass');
+        echo"<br>";
+        if(!$request->filled('user_pass')) echo "empty data";
+        //$request->file('profile_image');
+      $request->hasFile('profile_image');
+        
+        //echo $request->email_username;
+        //print_r($request->input());
+        */
 
     }
 
