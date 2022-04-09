@@ -68,7 +68,7 @@ Route::get('/adminmaster', function () {
 
 
 
-Route::get('/login',[AuthController::class,'showLogin'])->name('login');
+Route::get('/login',[AuthController::class,'showLogin']);
 Route::post('/do_login',[AuthController::class,'login'])->name('do_login');
 
 Route::get('/create_user',[AuthController::class,'createUser'])->name('create_user');

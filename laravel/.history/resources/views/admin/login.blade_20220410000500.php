@@ -183,7 +183,9 @@
           @enderror
             </div>
           
-               
+                <label for="email" class="form-label">Email or Username</label>
+                <input type="file" class="form-control" id="email" name="profile_image" placeholder="Enter your email or username" autofocus>
+              </div>
             <div class="mb-3 form-password-toggle">
               <div class="d-flex justify-content-between">
                 <label class="form-label" for="password">Password</label>

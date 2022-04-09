@@ -26,21 +26,20 @@ class AuthController extends Controller
     }
 
     public function login(Request $request){
-       return request();
-       // if(Auth::attempt(['email'=>$request->email_username,'password'=>$request->user_pass,'is_active'=>1])){
-            if(Auth::attempt(['email'=>$request->email,'password'=>$request->pass])){
+        Validator::validate($request->all(),[
+            'email_username'=>['email','required','min:3','max:10','unique:users'],
+            'user_pass'=>['required','min:5']
 
-            
-          //  if(Auth::user()->hasRole('admin'))
-            return redirect()->route('listjobs');
-            // else 
-            // return redirect()->route('index');
 
-        
-        }
-        else {
-            return redirect()->route('login')->with(['message'=>'incorerct username or password ']);
-        }
+        ],[
+            'email_username.required'=>'this field is required',
+            'email_username.min'=>'can not be less than 3 letters', 
+            'email_username.unique'=>'there is an email in the table',
+        ]);
+
+
+if(Auth::attempt(['email'=>'email_username','password'=>'user_pass']));
+
 
 
       /*  echo $request->input('email_username');
@@ -68,7 +67,7 @@ class AuthController extends Controller
     public function register(Request $request){
 
         Validator::validate($request->all(),[
-            'full_name'=>['required','min:3','max:30'],
+            'full_name'=>['required','min:3','max:10'],
             'u_email'=>['required','email','unique:users,email'],
             'user_pass'=>['required','min:5'],
             'confirm_pass'=>['same:user_pass']
@@ -92,7 +91,7 @@ class AuthController extends Controller
         $u->password=Hash::make($request->user_pass);
         $u->email=$request->u_email;
         if($u->save())
-        return redirect()->route('/')
+        return redirect()->route('home')
         ->with(['success'=>'user created successful']);
         return back()->with(['error'=>'can not create user']);
 
@@ -102,20 +101,6 @@ class AuthController extends Controller
     }
     public function logout(){
 
-        Auth::logout();
-        return redirect()->route('login');
-
     }
-
-    public function checkRole(){
-        if(Auth::user()->hasRole('admin'))
-        return 'listjobs';
-            else 
-            return '/';
-        
-    }
-
-
-
 
 }

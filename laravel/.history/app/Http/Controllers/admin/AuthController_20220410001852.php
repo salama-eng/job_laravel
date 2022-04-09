@@ -92,7 +92,7 @@ class AuthController extends Controller
         $u->password=Hash::make($request->user_pass);
         $u->email=$request->u_email;
         if($u->save())
-        return redirect()->route('/')
+        return redirect()->route('index')
         ->with(['success'=>'user created successful']);
         return back()->with(['error'=>'can not create user']);
 
@@ -111,7 +111,7 @@ class AuthController extends Controller
         if(Auth::user()->hasRole('admin'))
         return 'listjobs';
             else 
-            return '/';
+            return 'index';
         
     }
 

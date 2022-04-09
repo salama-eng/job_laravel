@@ -19,13 +19,6 @@
 
 
 
-
-
-
-
-
-
-
 <!-- =========================================================
 * Sneat - Bootstrap 5 HTML Admin Template - Pro | v1.0.0
 ==============================================================
@@ -158,14 +151,9 @@
             </a>
           </div>
           <!-- /Logo -->
-          <h4 class="mb-2">{{ __('content.signin'); }} 👋</h4>
+          <h4 class="mb-2">Welcome to Sneat! 👋</h4>
           <p class="mb-4">Please sign-in to your account and start the adventure</p>
-            
-          @if(session()->has('message')){
-            <p class="alert alert-danger">{{ session()->get('message') }}</p>
-          }
-          @endif
-          @if ($errors->any())
+            @if ($errors->any())
             @foreach ($errors->all() as $err)
             <p class="alert alert-danger">{{ $err }}</p>
                 
@@ -176,14 +164,14 @@
           <form id="formAuthentication" class="mb-3" action="{{ route('do_login') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
-              <label for="email" class="form-label">{{ __('content.email') }}</label>
+              <label for="email" class="form-label">Email or Username</label>
               <input type="text" class="form-control" id="email" name="email" placeholder="Enter your email or username" autofocus>
               @error('email_username')
               <span class="alert alert-danger">{{ $message }}</span>
           @enderror
             </div>
-          
-               
+      
+              
             <div class="mb-3 form-password-toggle">
               <div class="d-flex justify-content-between">
                 <label class="form-label" for="password">Password</label>

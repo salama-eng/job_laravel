@@ -61,35 +61,6 @@ Route::get('/adminmaster', function () {
     return view('admin.layout.master');
 });
 
-
-
-
-
-
-
-
-Route::get('/login',[AuthController::class,'showLogin'])->name('login');
-Route::post('/do_login',[AuthController::class,'login'])->name('do_login');
-
-Route::get('/create_user',[AuthController::class,'createUser'])->name('create_user');
-Route::post('/save_user',[AuthController::class,'register'])->name('save_user');
-
-
-Route::group(['middleware'=>'auth'],function(){
-
-/********  home slider ************** */
-Route::get('/sliders',[sliderController::class,'listAll'])->name("sliders");
-Route::get('/addslider',[sliderController::class,'addslider'])->name("addslider");
-Route::post('/storslider',[sliderController::class,'storslider'])->name("storslider");
-
-
-
-
-/********  services ************** */
-Route::get('/admin_services',[servicesController::class,'listAll'])->name("admin_services");
-Route::get('/addservice',[servicesController::class,'addservice'])->name("addservice");
-Route::post('/storservice',[servicesController::class,'storservice'])->name("storservice");
-
 /********  jobs ************** */
 Route::get('/addJob',[jobsController::class,'addJob'])->name("addJob");
 Route::get('/listjobs',[jobsController::class,'listAll'])->name("listjobs");
@@ -106,7 +77,35 @@ Route::get('/addmember',[membersController::class,'addmember'])->name("addmember
 Route::post('/stormember',[membersController::class,'stormember'])->name("stormember");
 
 
-    Route::get('/show_all_users',[AuthController::class,'listAll'])->name("show_users");
+
+/********  services ************** */
+Route::get('/admin_services',[servicesController::class,'listAll'])->name("admin_services");
+Route::get('/addservice',[servicesController::class,'addservice'])->name("addservice");
+Route::post('/storservice',[servicesController::class,'storservice'])->name("storservice");
+
+
+
+
+/********  home slider ************** */
+Route::get('/sliders',[sliderController::class,'listAll'])->name("sliders");
+Route::get('/addslider',[sliderController::class,'addslider'])->name("addslider");
+Route::post('/storslider',[sliderController::class,'storslider'])->name("storslider");
+
+
+
+
+Route::get('/login',[AuthController::class,'showLogin']);
+Route::post('/do_login',[AuthController::class,'login'])->name('do_login');
+
+Route::get('/create_user',[AuthController::class,'createUser'])->name('create_user');
+Route::post('/save_user',[AuthController::class,'register'])->name('save_user');
+
+
+Route::get('/show_all_users',[AuthController::class,'listAll'])->name("show_users");
+
+
+
+Route::group(['middleware'=>'auth'],function(){
 
 
 
