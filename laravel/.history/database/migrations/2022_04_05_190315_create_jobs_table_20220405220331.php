@@ -27,7 +27,7 @@ return new class extends Migration
             $table->string(column:"qualifications");
             $table->string(column:"respossbilities");
             $table->string(column:"steps_to_applye");
-            
+           
             $table->unsignedBigInteger('company_id');
          
             $table->foreign('company_id')

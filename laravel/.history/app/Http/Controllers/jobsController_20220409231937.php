@@ -10,12 +10,12 @@ class jobsController extends Controller
 {
    
     public function listAll(){
-     //   $company=companies::all();
+        $company=companies::all();
        // $job=jobs::all();
-        $company=companies::with(['jobs'])->get()->first();
+        $job=jobs::with(['jobs'])->get()->first();
         
         //return $user->profile->facebook;
-        return response($company);
+        return response($job);
         return view('admin.jobs.ListJob',compact('company', 'job'));
     }
 

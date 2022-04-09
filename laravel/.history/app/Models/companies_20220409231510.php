@@ -9,6 +9,7 @@ class companies extends Model
 {
     use HasFactory;
 
+
     public function jobs(){
         return $this->hasMany(jobs::class,'company_id');
     }
