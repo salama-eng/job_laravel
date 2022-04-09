@@ -172,7 +172,7 @@
       </a>
       <ul class="menu-sub">
         <li class="menu-item">
-          <a href="{{ route('show_users') }}" class="menu-link">
+          <a href="{{ route('show_all_users') }}" class="menu-link">
             <div data-i18n="List Users">list Users</div>
           </a>
         </li>

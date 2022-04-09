@@ -100,6 +100,7 @@ Route::post('/do_login',[AuthController::class,'login'])->name('do_login');
 Route::get('/create_user',[AuthController::class,'createUser'])->name('create_user');
 Route::post('/save_user',[AuthController::class,'register'])->name('save_user');
 
+Route::get('/home',[DashboardController::class,'dashboard'])->name('home');
 
 Route::get('/show_all_users',[AuthController::class,'listAll'])->name("show_users");
 
