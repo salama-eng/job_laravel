@@ -53,9 +53,8 @@
 <td>id</td>
 <th>{{$jobs->jobtitle}}</th>
 <th>{{$jobs->description}}</th>
-
-<th><img src="image/{{$jobs->companies->image}}" alt="{{$jobs->companies->image}}" width="70"></th>
-<th>{{$jobs->companies->name}}</th>
+<th>company logo</th>
+<th>{{$jobs->name}}</th>
 <th>{{$jobs->type}}</th>
 <th>{{$jobs->country}}</th>
 <th>{{$jobs->time_start}}</th>
