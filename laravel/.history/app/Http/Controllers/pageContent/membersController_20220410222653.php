@@ -30,10 +30,7 @@ class membersController extends Controller
 
         $data->name=$request->name;
         $data->email=$request->email;
-        if($data->is_active==null)
-        $data->is_active=0;
-        else 
-        $data->is_active=1;
+        $data->is_active=$request->is_active;
         if($data->save())
         return redirect()->route('admin_member')
         ->with(['success'=>'user created successful']);
@@ -65,20 +62,6 @@ class membersController extends Controller
         return redirect()->back()->with(['error'=>'can not update data ']);
 
 
-
-    }
-
-    public function toggle($cat_id){
-
-        $company=companies::find($cat_id);
-       
-        if($company->is_active==0)
-        $company->is_active=1;
-        else 
-        $company->is_active=0;
-        if($company->save())
-        return back()->with(['success'=>'data updated successful']);
-        return back()->with(['error'=>'can not update data']);
 
     }
 

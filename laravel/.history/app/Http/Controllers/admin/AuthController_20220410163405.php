@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-
+use phpDocumentor\Reflection\DocBlock\Tags\Author;
 
 class AuthController extends Controller
 {
@@ -18,10 +18,10 @@ class AuthController extends Controller
     }
 
     public function showLogin(){
-        return view('admin.login');
-        if(Auth::check())
-        return redirect()->route($this->checkRole());
-        else 
+        //return view('admin.login');
+        // if(Auth::check())
+        // return redirect()->route($this->checkRole());
+        // else 
         return view('admin.login');
     }
 

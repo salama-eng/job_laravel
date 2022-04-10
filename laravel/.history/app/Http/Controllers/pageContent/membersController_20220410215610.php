@@ -30,10 +30,7 @@ class membersController extends Controller
 
         $data->name=$request->name;
         $data->email=$request->email;
-        if($data->is_active==null)
-        $data->is_active=0;
-        else 
-        $data->is_active=1;
+        $data->is_active=$request->is_active;
         if($data->save())
         return redirect()->route('admin_member')
         ->with(['success'=>'user created successful']);
@@ -48,37 +45,17 @@ class membersController extends Controller
     }
 
     public function update(Request $request,$company_id){
-     // return  $request();
         $company=companies::find($company_id);
         $company->name=$request->name;
-        $company->email=$request->email;
-
-       if($company->is_active==null)
-        $company->is_active=0;
-        else 
-        $company->is_active=1;
+        $company->name_en=$request->name_en;
         $company->is_active=$request->is_active;
         if($request->hasFile('image'))
         $company->image=$this->uploadFile($request->file('image'));
         if($company->save())
-        return redirect()->route('admin_member')->with(['success'=>'data updated successful']);
+        return redirect()->route('list_categories')->with(['success'=>'data updated successful']);
         return redirect()->back()->with(['error'=>'can not update data ']);
 
 
-
-    }
-
-    public function toggle($cat_id){
-
-        $company=companies::find($cat_id);
-       
-        if($company->is_active==0)
-        $company->is_active=1;
-        else 
-        $company->is_active=0;
-        if($company->save())
-        return back()->with(['success'=>'data updated successful']);
-        return back()->with(['error'=>'can not update data']);
 
     }
 

@@ -68,18 +68,4 @@ class membersController extends Controller
 
     }
 
-    public function toggle($cat_id){
-
-        $company=companies::find($cat_id);
-       
-        if($company->is_active==0)
-        $company->is_active=1;
-        else 
-        $company->is_active=0;
-        if($company->save())
-        return back()->with(['success'=>'data updated successful']);
-        return back()->with(['error'=>'can not update data']);
-
-    }
-
 }

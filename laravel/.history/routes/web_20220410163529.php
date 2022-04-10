@@ -104,11 +104,6 @@ Route::get('/admin_about',[aboutController::class,'listAll'])->name("admin_about
 Route::get('/admin_member',[membersController::class,'listAll'])->name("admin_member");
 Route::get('/addmember',[membersController::class,'addmember'])->name("addmember");
 Route::post('/stormember',[membersController::class,'stormember'])->name("stormember");
-Route::get('/edit_member/{id}',[membersController::class,'edit'])->name('edit_member');
-Route::get('/toggle_member/{id}',[membersController::class,'toggle'])->name('toggle_member');
-
-Route::post('/update_member/{id}',[membersController::class,'update'])->name('update_member');
-
 
 
     Route::get('/show_all_users',[AuthController::class,'listAll'])->name("show_users");

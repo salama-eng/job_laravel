@@ -18,10 +18,10 @@ class AuthController extends Controller
     }
 
     public function showLogin(){
-        return view('admin.login');
-        if(Auth::check())
-        return redirect()->route($this->checkRole());
-        else 
+        //return view('admin.login');
+        // if(Auth::check())
+        // return redirect()->route($this->checkRole());
+        // else 
         return view('admin.login');
     }
 

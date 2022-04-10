@@ -166,6 +166,15 @@
   <div class="menu-inner-shadow"></div>
 
   
+
+    <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
+      <i class="bx bx-chevron-left bx-sm align-middle"></i>
+    </a>
+  </div>
+
+  <div class="menu-inner-shadow"></div>
+
+  
   
   <ul class="menu-inner py-1">
     <!-- Dashboards -->
@@ -494,7 +503,7 @@
                     <div class="d-flex">
                       <div class="flex-shrink-0 me-3">
                         <div class="avatar">
-                          <img src="{{asset('assets/img/avatars/1.png')}}" alt class="w-px-40 h-auto rounded-circle')}}">
+                          <img src="assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle">
                         </div>
                       </div>
                       <div class="flex-grow-1">
@@ -666,8 +675,8 @@
           <li class="nav-item navbar-dropdown dropdown-user dropdown">
             <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
               <div class="avatar avatar-online">
-                <img src="{{asset('assets/img/avatars/1.png')}}" alt class="w-px-40 h-auto rounded-circle')}}">
-                        </div>
+                <img src="assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle">
+              </div>
             </a>
             <ul class="dropdown-menu dropdown-menu-end">
               <li>
@@ -675,8 +684,8 @@
                   <div class="d-flex">
                     <div class="flex-shrink-0 me-3">
                       <div class="avatar avatar-online">
-                        <img src="{{asset('assets/img/avatars/1.png')}}" alt class="w-px-40 h-auto rounded-circle')}}">
-                        </div>
+                        <img src="assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle">
+                      </div>
                     </div>
                     <div class="flex-grow-1">
                       <span class="fw-semibold d-block">John Doe</span>
