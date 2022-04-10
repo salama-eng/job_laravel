@@ -12,11 +12,10 @@ class jobsController extends Controller
     public function listAll(){
      //   $company=companies::all();
        // $job=jobs::all();
-     //   $company=companies::with(['jobs'])->get();
-        $jobs=jobs::with(['companies'])->get();
+        $company=companies::with(['jobs'])->get()->first();
         
-// return response($jobs);
-        return view('admin.jobs.ListJob')->with('jobs', $jobs);
+      return response($company);
+        return view('admin.jobs.ListJob',compact('company'));
     }
 
     public function addJob(){

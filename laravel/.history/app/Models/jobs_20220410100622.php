@@ -10,7 +10,7 @@ class jobs extends Model
     use HasFactory;
 
     public function companies(){
-        return $this->belongsTo(companies::class,'company_id');
+        return $this->belongsTo(jobs::class,'company_id');
     }
 
 }

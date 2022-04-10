@@ -54,8 +54,9 @@
 <th>{{$jobs->jobtitle}}</th>
 <th>{{$jobs->description}}</th>
 
-<th><img src="image/{{$jobs->companies->image}}" alt="{{$jobs->companies->image}}" width="70"></th>
+<th><img src="image/{{$jobs->companies->name}}<" alt="{{$jobs->companies->name}}<">/th>
 <th>{{$jobs->companies->name}}</th>
+
 <th>{{$jobs->type}}</th>
 <th>{{$jobs->country}}</th>
 <th>{{$jobs->time_start}}</th>

@@ -26,11 +26,10 @@ class AuthController extends Controller
     }
 
     public function login(Request $request){
-     //  return request();
-       // return $request->pass; return $request->email;
+        return $request->pass; return $request->email;
   
        // if(Auth::attempt(['email'=>$request->email_username,'password'=>$request->user_pass,'is_active'=>1])){
-            if(Auth::attempt(['email'=>$request->email,'password'=>$request->pass])){
+      Auth::attempt(['email'=>$request->email,'password'=>$request->pass]);
 
             
           //  if(Auth::user()->hasRole('admin'))
@@ -40,7 +39,7 @@ class AuthController extends Controller
 
         
         }
-        else {
+     //   else {
             return redirect()->route('login')->with(['message'=>'incorerct username or password ']);
         }
 

@@ -42,20 +42,19 @@
 </tr>
       </thead>
       <tbody class="table-border-bottom-0">
-@if (isset($jobs))
+@if (isset($job))
     
 
   
 
-@foreach ($jobs as $jobs)
+@foreach ($company as $company)
 
 
 <td>id</td>
-<th>{{$jobs->jobtitle}}</th>
+<th>{{$company->$jobs->jobtitle}}</th>
 <th>{{$jobs->description}}</th>
-
-<th><img src="image/{{$jobs->companies->image}}" alt="{{$jobs->companies->image}}" width="70"></th>
-<th>{{$jobs->companies->name}}</th>
+<th>company logo</th>
+<th>{{$company->name}}</th>
 <th>{{$jobs->type}}</th>
 <th>{{$jobs->country}}</th>
 <th>{{$jobs->time_start}}</th>

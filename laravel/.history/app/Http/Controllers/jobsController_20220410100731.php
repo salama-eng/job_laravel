@@ -15,7 +15,7 @@ class jobsController extends Controller
      //   $company=companies::with(['jobs'])->get();
         $jobs=jobs::with(['companies'])->get();
         
-// return response($jobs);
+ return response($jobs);
         return view('admin.jobs.ListJob')->with('jobs', $jobs);
     }
 
