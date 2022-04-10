@@ -107,8 +107,6 @@ Route::post('/stormember',[membersController::class,'stormember'])->name("storme
 
 
     Route::get('/show_all_users',[AuthController::class,'listAll'])->name("show_users");
+
+
 Route::get('/logout',[AuthController::class,'logout'])->name('logout');
-
-
-
-});
