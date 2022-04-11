@@ -86,15 +86,15 @@ public function update(Request $request,$job_id){
 
 }
 
-public function toggle($job_id){
+public function toggle($cat_id){
 
-    $job=jobs::find($job_id);
+    $company=companies::find($cat_id);
    
-    if($job->is_active==0)
-    $job->is_active=1;
+    if($company->is_active==0)
+    $company->is_active=1;
     else 
-    $job->is_active=0;
-    if($job->save())
+    $company->is_active=0;
+    if($company->save())
     return back()->with(['success'=>'data updated successful']);
     return back()->with(['error'=>'can not update data']);
 

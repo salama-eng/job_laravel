@@ -50,51 +50,42 @@ class jobsController extends Controller
 
   public function edit($id){
 
-    $jobs=jobs::with(['companies'])->find($id);
-    $comp=companies::all();
+    $job=jobs::with(['companies'])->find($id);
+        
     // return response($jobs);
-            return view('admin.jobs.edit_job',compact('jobs', 'comp'));
+            return view('admin.jobs.edit_job')->with('job', $job);
 }
 
-public function update(Request $request,$job_id){
+public function update(Request $request,$company_id){
  // return  $request();
-    $job=jobs::find($job_id);
-    $job->jobtitle=$request->jobtitle;
-        $job->description=$request->description;
-        $job->country=$request->country;
-        $job->shift=$request->shift;
-        $job->company_id=$request->company_id;
-        $job->time_start=$request->time_start;
-        $job->time_close=$request->time_close;
-        $job->qualifications=$request->qualifications;
-        $job->respossbilities=$request->respossbilities;
-      $job->steps_to_applye	=$request->steps_to_applye;
-      $job->type=$request->type;
-   if($job->is_active==null)
-    $job->is_active=0;
+    $company=companies::find($company_id);
+    $company->name=$request->name;
+    $company->email=$request->email;
+
+   if($company->is_active==null)
+    $company->is_active=0;
     else 
-    $job->is_active=1;
-    $job->is_active=$request->is_active;
+    $company->is_active=1;
+    $company->is_active=$request->is_active;
     if($request->hasFile('image'))
-    $job->image=$this->uploadFile($request->file('image'));
-    if($job->save())
-    return redirect()->route('listjobs')
-    ->with(['success'=>'user created successful']);
-    return back()->with(['error'=>'can not create job']);
+    $company->image=$this->uploadFile($request->file('image'));
+    if($company->save())
+    return redirect()->route('admin_member')->with(['success'=>'data updated successful']);
+    return redirect()->back()->with(['error'=>'can not update data ']);
 
 
 
 }
 
-public function toggle($job_id){
+public function toggle($cat_id){
 
-    $job=jobs::find($job_id);
+    $company=companies::find($cat_id);
    
-    if($job->is_active==0)
-    $job->is_active=1;
+    if($company->is_active==0)
+    $company->is_active=1;
     else 
-    $job->is_active=0;
-    if($job->save())
+    $company->is_active=0;
+    if($company->save())
     return back()->with(['success'=>'data updated successful']);
     return back()->with(['error'=>'can not update data']);
 
